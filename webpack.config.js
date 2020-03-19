@@ -1,5 +1,5 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = env => {
   const isProduction = env === "production";
@@ -9,11 +9,12 @@ module.exports = env => {
     entry: "./src/index.tsx",
     output: {
       path: path.resolve(__dirname, "build"),
-      filename: "bundle.js"
+      publicPath: "/",
+      filename: "[name].[contenthash].js"
     },
 
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.json'],
+      extensions: [".ts", ".tsx", ".js", ".json"]
     },
 
     module: {
@@ -25,11 +26,27 @@ module.exports = env => {
       ]
     },
 
-    devServer: {},
+    optimization: {
+      moduleIds: 'hashed',
+      runtimeChunk: 'single',
+      splitChunks: {
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendors",
+            chunks: "all"
+          }
+        }
+      }
+    },
+
+    devServer: {
+      open: true
+    },
 
     plugins: [
       new HtmlWebpackPlugin({
-        template: 'public/index.html',
+        template: "public/index.html"
       })
     ]
   };
