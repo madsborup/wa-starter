@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "module": "commonjs",
+    "target": "es5",
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "removeComments": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "strict": true,
+    "jsx": "react",
+    "isolatedModules": true,
+    "baseUrl": "./",
+    "esModuleInterop": true
+  },
+  "include": ["./src"],
+  "exclude": ["node-modules"]
+}
