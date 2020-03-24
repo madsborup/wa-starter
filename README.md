@@ -2,11 +2,11 @@
 
 A basic web-app starter.
 
-# Tools 
+# Stack and tools 
 
 - React
 - Redux
 - TypeScript
 - Babel
-- Webpack
+- webpack
 - styled-components
