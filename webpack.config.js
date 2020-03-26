@@ -20,7 +20,7 @@ module.exports = env => {
     module: {
       rules: [
         {
-          test: /\.tsx$/,
+          test: /\.(ts|tsx)?$/,
           use: ["babel-loader"]
         }
       ]
