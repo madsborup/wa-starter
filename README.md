@@ -9,3 +9,4 @@ A basic web-app starter.
 - Babel
 - webpack
 - styled-components
+# inspire-mobile-frontend-test
